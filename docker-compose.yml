@@ -1,0 +1,15 @@
+services:
+  livepro-painel:
+    container_name: livepro-painel
+    build:
+      context: ./.develop
+    volumes:
+        - ./:/srv/app
+    ports:
+        - 9510:80
+    networks:
+      - ecommerce
+
+networks:
+  ecommerce:
+    external: true
